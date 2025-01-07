@@ -6,5 +6,4 @@ WITH CTE AS (SELECT request_id, url,
 	SELECT url, json_object_agg(key, value) as query_parameters, COUNT(DISTINCT key) AS count_query_params
 	FROM CTE
 	GROUP BY url
-	ORDER BY count_query_params DESC, url ASC
-	LIMIT 1 ;
+	ORDER BY count_query_params DESC, url ASC ;
